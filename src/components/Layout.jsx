@@ -1,14 +1,14 @@
 import React from "react";
-import "./assets/styles/components/layout.css";
+import "../assets/styles/components/Layout.scss";
 import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = ({ children }) => (
 	<div className="layout">
-		<header />
+		<Header />
 		{children}
-		<footer />
-	</div>;
+		<Footer />
+	</div>
 );
 
 export default Layout;

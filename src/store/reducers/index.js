@@ -9,7 +9,7 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				favoriteCharacters: state.favoriteCharacters.filter(
-					(items) => items.data.id !== action.payload
+					(items) => items.data.id !== action.payload //different payload of the character
 				),
 			};
 		case "SET_SECTION":
