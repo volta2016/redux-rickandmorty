@@ -1,7 +1,7 @@
-import logger from "redux-logger";
-import reducer from "./reducers";
 import { compose } from "redux";
 import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
+import reducer from "./reducers";
 
 const initialState = {
 	favoriteCharacters: [],
