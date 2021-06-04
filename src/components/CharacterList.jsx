@@ -1,32 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import Character from "./Character";
 import Error from "./Error";
 import Loader from "./Loader";
 import "../assets/styles/components/CharacterList.scss";
+import useGetCharacters from "../hooks/useGetCharacters";
 
 const CharacterList = () => {
-	const [characters, setCharacters] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(false);
-
-	async function getCharacter() {
-		try {
-			const response = await axios.get(
-				"https://rickandmortyapi.com/api/character/"
-			);
-			const result = response.data.results;
-			console.log(result);
-			setCharacters(result); //update characters
-			setLoading(false);
-		} catch (error) {
-			setLoading(false);
-			setError(error);
-		}
-	}
-
+	const { characters, loading, error, getCharacters } = useGetCharacters();
 	useEffect(() => {
-		getCharacter(); //vamos a cargar los personajes
+		getCharacters(); //vamos a cargar los personajes
 	}, []);
 
 	return (
