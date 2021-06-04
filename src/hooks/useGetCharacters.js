@@ -3,7 +3,7 @@ import axios from "axios";
 import { useLocalStorage } from "./useLocalStorage";
 
 const useGetCharacters = () => {
-	const [characters, setCharacters] = useLocalStorage("characters", "");
+	const [characters, setCharacters] = useLocalStorage("characters", ""); //key value
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 
