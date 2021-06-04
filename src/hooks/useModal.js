@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const useModal = (intialValue = false) => {
+	const [modal, setModal] = useState(false);
 	const [isOpen, setIsOpen] = useState(intialValue);
 
 	const handleToggle = () => {
@@ -8,14 +9,14 @@ const useModal = (intialValue = false) => {
 	};
 
 	const handleCloseModal = () => {
-		setIsOpen(false);
+		setModal(false);
 	};
 
 	const handleOpenModal = () => {
-		setIsOpen(true);
+		setModal(true);
 	};
 
-	return { isOpen, handleToggle, handleCloseModal, handleOpenModal };
+	return { modal, handleToggle, handleCloseModal, handleOpenModal };
 };
 
 export default useModal;
