@@ -1,16 +1,25 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "../assets/styles/App.scss";
 import Characters from "../containers/Characters";
-import Favorites from "../containers/Favarotites";
 import Layout from "../components/Layout";
+import Loader from "../components/Loader";
+const Favorites = lazy(() => import("../components/Favorites"));
 
 const App = () => (
 	<BrowserRouter>
 		<Layout>
 			<Switch>
-				<Route exact path="/" component={Characters} />
-				<Route path="/favorites" component={Favorites} />
+				<Suspense
+					fallback={
+						<div>
+							<Loader />
+						</div>
+					}
+				>
+					<Route exact path="/" component={Characters} />
+					<Route path="/favorites" component={Favorites} />
+				</Suspense>
 			</Switch>
 		</Layout>
 	</BrowserRouter>
