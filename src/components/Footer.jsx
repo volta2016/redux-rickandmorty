@@ -6,21 +6,20 @@ const Footer = () => (
 		<div className="footer__made">
 			Made with{" "}
 			<span role="img" aria-label="heart">
-				💜
+				❤️
 			</span>{" "}
 			by
 			<a
-				href="https://www.linkedin.com/in/miguel-chamorro-fuentes-844a6514a/"
+				href="https://voltauxui.cl/"
 				rel="noopener noreferrer"
 				target="_blank"
 				className="logo"
 			>
-				<span className="logo-img">&lt;&gt;</span> <span>Miguel Chamorro</span>
+				<span className="logo-img">&lt;&gt;</span> <span>volta2016</span>
 			</a>
 		</div>
 		<div className="footer__location">
-			CH,
-			<span>Chillán</span>, 2021
+			<span></span>
 		</div>
 	</footer>
 );
